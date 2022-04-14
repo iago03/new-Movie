@@ -1,0 +1,4 @@
+<div class="form-iput">
+    <input [type]='inputType' [(ngModel)]="value" (keyup)="onKey($event)" [id]="inputId">
+    <label [ngClass]="{'focus': value}" [for]="inputId">{{label}}</label>
+</div>

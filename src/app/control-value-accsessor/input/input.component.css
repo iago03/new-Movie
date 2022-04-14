@@ -1,0 +1,39 @@
+input{
+    padding: 15px 20px 0px;
+    height: 35px;
+    width: 274px;
+    font-size: 16px;
+    background-color: #333;
+    color: white;
+    margin: 0px 0px 16px;
+    border: 0px;
+    border-radius: 4px;
+    display: block;
+}
+
+input:focus-visible{
+    outline: none;
+}
+
+input:focus{
+    background-color: #454545;
+}
+
+
+label{
+    position: absolute;
+    color: #8c8c8c;
+    font-size: 20px;
+    transform: translate(20px,-50px);
+    transition: all 0.2s ease-in-out;
+}
+
+input:focus + label{
+    font-size: 16px;
+    transform: translate(20px,-60px);
+}
+
+.focus{
+    font-size: 16px;
+    transform: translate(20px,-60px);
+}
