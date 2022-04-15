@@ -1,0 +1,40 @@
+main{
+    background-image: url(../../assets/img/img.jpg);
+}
+
+main section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+main section .svg{
+    width: 167px;
+    height: 45px;
+    position: absolute;
+    top: 28px;
+    left: 45px;
+    cursor: pointer;
+}
+
+main section .svg svg{
+    fill: #e50914;
+}
+
+main section .sing-in{
+    padding: 60px 68px 40px;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+main section .sing-in h2{
+    color: #fff;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 28px;
+}
+
+main section .sing-in input{
+    margin-bottom: 16px!important;
+}

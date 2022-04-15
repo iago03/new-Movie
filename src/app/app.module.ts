@@ -1,20 +1,20 @@
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { inputModul } from './control-value-accsessor/input.modul';
+import { SignInModule } from './sign-in/signIn.module';
+import { SignUpMpdule } from './sign-up/sign-up.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    inputModul,
-    ReactiveFormsModule
+    SignInModule,
+    SignUpMpdule
   ],
   providers: [],
   bootstrap: [AppComponent]
