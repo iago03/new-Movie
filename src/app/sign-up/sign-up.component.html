@@ -1,5 +1,5 @@
 <main>
-    <section>
+    <section class="head">
       <div class="svg">
         <svg viewBox="0 0 111 30" class="svg-icon svg-icon-netflix-logo" focusable="false">
           <g id="netflix-logo">
@@ -9,11 +9,17 @@
           </g>
         </svg>
       </div>
-      <form [formGroup]="form" class="sing-in">
-        <h2>Sign In</h2>
-        <app-input formControlName="itmName" label="Email or phone number" inputType="text" inputId="email"></app-input>
-        <app-input formControlName="password" label="Password" inputType="password" inputId="password"></app-input>
-        <app-button (click)="test()"></app-button>
+
+      <h3>Sing In</h3>
+    </section>
+    <hr style="margin-top: 30px; opacity: 0.6;">
+    <section class="content">
+      <form [formGroup]="form" class="sing-up">
+        <h2>Joining Netflix is easy.</h2>
+        <p>Enter your password and you'll be watching in no time.</p>
+        <app-input formControlName="itmName" label="Email or phone number" inputType="text" inputId="email" inputClass="sing-up"></app-input>
+        <app-input formControlName="password" label="Password" inputType="password" inputId="password" inputClass="sing-up"></app-input>
+        <app-button (click)="test()" fontSize="24px" value="Sing Up"></app-button>
       </form>
     </section>
   </main>

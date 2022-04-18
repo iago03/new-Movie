@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./button.component.css']
 })
 export class ButtonComponent {
-
+  @Input() value:string;
   @Input() fontSize:string = "16px";
 
   constructor() { }

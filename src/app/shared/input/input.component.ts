@@ -16,6 +16,7 @@ export class InputComponent implements OnInit, ControlValueAccessor {
   @Input() label:string;
   @Input() inputType:string;
   @Input() inputId:string;
+  @Input() inputClass:string;
   onChange: (value:any) => void;
   
   constructor() { }

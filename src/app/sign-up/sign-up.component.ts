@@ -11,14 +11,13 @@ export class SignUpComponent implements OnInit {
   
   form:FormGroup;
 
-  constructor(private fb:FormBuilder){
+  constructor(private fb:FormBuilder){ }
+
+  ngOnInit(): void {
     this.form = this.fb.group({
       itmName: new FormControl(),
       password: new FormControl(),
     })
-  }
-
-  ngOnInit(): void {
   }
 
   
