@@ -11,9 +11,11 @@
     </div>
     <form [formGroup]="form" class="sing-in">
       <h2>Sign In</h2>
-      <app-input formControlName="itmName" label="Email or phone number" inputType="text" inputId="email"></app-input>
+      <app-input formControlName="email" label="Email or phone number" inputType="text" inputId="email"></app-input>
       <app-input formControlName="password" label="Password" inputType="password" inputId="password"></app-input>
       <app-button (click)="test()" value="Sing In"></app-button>
+
+      <p>New to Netflix? <a routerLink="sing-up">Sign up now.</a></p>
     </form>
   </section>
 </main>

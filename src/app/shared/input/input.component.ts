@@ -37,7 +37,7 @@ export class InputComponent implements OnInit, ControlValueAccessor {
   }
 
 
-  onKey(event:any){
-    this.onChange(event.target.value)
+  onKey(){
+    this.onChange(this.value)
   }
 }

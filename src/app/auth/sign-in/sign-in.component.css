@@ -1,5 +1,5 @@
 main{
-    background-image: url(../../assets/img/img.jpg);
+    background-image: url(../../../assets/img/img.jpg);
 }
 
 main section{
@@ -39,4 +39,18 @@ main section .sing-in h2{
 
 main section .sing-in input{
     margin-bottom: 16px!important;
+}
+
+main section .sing-in p{
+    color: #737373;
+}
+
+main section .sing-in p a{
+    color: white;
+    text-decoration: none;
+}
+
+
+main section .sing-in p a:hover{
+    text-decoration: underline;
 }

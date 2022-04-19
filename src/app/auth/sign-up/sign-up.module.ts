@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { ReactiveFormsModule } from "@angular/forms";
-import { InputModul } from "../shared/input.module";
+import { RouterModule } from "@angular/router";
+import { InputModul } from "../../shared/input.module";
 import { SignUpComponent } from "./sign-up.component";
 
 @NgModule({
@@ -8,10 +9,13 @@ import { SignUpComponent } from "./sign-up.component";
 
     imports:[ 
         InputModul,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        RouterModule.forChild([{
+            path: "", component:SignUpComponent,
+        }])
     ],
 
-    exports: [ SignUpComponent ]
+    exports: [ RouterModule ]
 })
 
 export class SignUpMpdule{}

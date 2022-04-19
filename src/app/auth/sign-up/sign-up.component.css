@@ -27,6 +27,7 @@ main .head h3{
     color: #333;
     font-size: 19px;
     margin: 0px;
+    cursor: pointer;
 }
 
 main .content .sing-up{
