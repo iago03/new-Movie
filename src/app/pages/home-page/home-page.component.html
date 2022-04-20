@@ -1,1 +1,29 @@
-<button (click)="logOut()">Log Out</button>
+<main>
+    <section class="top">
+        <form class="search">
+            <h2>Unlimited movies, TV shows, and more.</h2>
+            <div><svg viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.7)" class="Hawkins-Icon"
+                    style="fill:rgba(255, 255, 255, 0.7)">
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                    <path fill-rule="evenodd"
+                        d="M11 18a7 7 0 10-7-7 7 7 0 007 7zm7-1.38l3.68 3.67-1.42 1.42L16.62 18A9 9 0 1118 16.62z">
+                    </path>
+                </svg></div>
+            <input type="text" placeholder="Search for Netflix Films">
+        </form>
+    </section>
+    <section class="content">
+        <article class="nav-bar">
+            <button (click)="logOut()">Movies</button>
+            <button>Last Movies</button>
+            <button>Popular MOvies</button>
+            <button>Upcoming Movies</button>
+            <button>TV Series</button>
+        </article>
+        <article class="cards-area">
+            <app-card
+            *ngFor="let item of data$ | async" [cardItem]="item"
+            ></app-card>
+        </article>
+    </section>
+</main>

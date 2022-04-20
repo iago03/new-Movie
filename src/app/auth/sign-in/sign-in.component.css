@@ -24,7 +24,7 @@ main section .svg svg{
 }
 
 main section .sing-in{
-    width: 30%;
+    width: 80%;
     max-width: 400px;
     padding: 60px 68px 40px;
     background-color: rgba(0, 0, 0, 0.75);

@@ -1,0 +1,84 @@
+main .top{
+    background-size: 100%;
+    background-image: url(../../../assets/img/home-page/streams-bg.png);
+    background-repeat: repeat-y;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 130px 20px 80px;
+}
+
+main .top .search{
+    width: 80%;
+    max-width: 540px;
+    position: relative;
+}
+
+main .top h2{
+    color: white;
+    font-size: 40px;
+    text-align: center;
+}
+
+div{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+}
+
+main .top .search input{
+    width: 100%;
+    padding: 12px 12px 12px 50px;
+    border-radius: 4px;
+    border: 1.5px solid rgb(255, 255, 255, 0.2);
+    background-color: transparent;
+    color: white;
+}
+
+main .top .search input:focus-visible{
+    border-color: rgb(73, 105, 228);
+    outline: none;
+}
+
+main .content{
+    background-color: rgb(22, 22, 22) ;
+}
+
+main .content .nav-bar{
+    padding: 32px 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+main .content .nav-bar button{
+    background-color: #4e4e4e;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    color: white;
+    margin: 0px 6px;
+    cursor: pointer;
+    transition: all 0.4s;
+    font-size: 15px;
+}
+
+main .content .nav-bar button:hover{
+    background-color: rgb(57, 82, 177);
+}
+
+main .content .nav-bar button:active{
+    background-color: rgb(41, 58, 127);
+}
+
+
+main .content .cards-area {
+    width: 95%;
+    max-width: 1800px;
+    margin: 0px auto;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
