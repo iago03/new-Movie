@@ -1,0 +1,29 @@
+header{
+    position: fixed;
+    width: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgb(22, 22, 22) 100%);
+}
+
+header nav{
+    display: flex;
+    width: 90%;
+    height: 80px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px auto;
+
+}
+
+header nav h1{
+    width: 110px;
+    margin: 0px;
+}
+
+header nav h1 svg{
+    fill: #e50914;
+}
+
+.button{
+    margin: 0px;
+    padding: 0px;
+}

@@ -13,8 +13,8 @@ export class HttpService {
 
   constructor(private http:HttpClient) { }
 
-  getAllMoviesList(page:number){
-    return this.http.get<Observable<MoviListInfo[]>>(`https://api.themoviedb.org/3/movie/now_playing?api_key=${this.api_key}&language=en-US&page=${page}`)
+  getAllMoviesList(page:number, name:string){
+    return this.http.get<Observable<MoviListInfo[]>>(`https://api.themoviedb.org/3/movie/${name}?api_key=${this.api_key}&language=en-US&page=${page}`)
       .pipe(map((response:any):MoviListInfo[] => {
         let newData = response.results.map((o:MoviListInfo) => {
 

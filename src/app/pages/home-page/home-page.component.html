@@ -1,3 +1,5 @@
+<app-header></app-header>
+
 <main>
     <section class="top">
         <form class="search">
@@ -14,11 +16,10 @@
     </section>
     <section class="content">
         <article class="nav-bar">
-            <button (click)="logOut()">Movies</button>
-            <button>Last Movies</button>
-            <button>Popular MOvies</button>
-            <button>Upcoming Movies</button>
-            <button>TV Series</button>
+            <button #button (click)="rout($event, 'now_playing')" class="active">Movies</button>
+            <button #button  (click)="rout($event,'top_rated')">Top Rated</button>
+            <button #button  (click)="rout($event,'popular')">Popular MOvies</button>
+            <button #button  (click)="rout($event,'upcoming')">Upcoming Movies</button>
         </article>
         <article class="cards-area">
             <app-card
@@ -26,4 +27,11 @@
             ></app-card>
         </article>
     </section>
+    <section class="bottom">
+        <h4>Looking for company assets?</h4>
+        <p>Get more images and information about Netflix on our company site.</p>
+        <button><a href="https://about.netflix.com/en/company-assets">Go to About Netflix</a></button>
+    </section>
 </main>
+
+<app-footer></app-footer>

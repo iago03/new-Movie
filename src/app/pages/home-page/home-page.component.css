@@ -1,4 +1,4 @@
-main .top{
+main .top {
     background-size: 100%;
     background-image: url(../../../assets/img/home-page/streams-bg.png);
     background-repeat: repeat-y;
@@ -8,19 +8,19 @@ main .top{
     padding: 130px 20px 80px;
 }
 
-main .top .search{
+main .top .search {
     width: 80%;
     max-width: 540px;
     position: relative;
 }
 
-main .top h2{
+main .top h2 {
     color: white;
     font-size: 40px;
     text-align: center;
 }
 
-div{
+div {
     width: 20px;
     height: 20px;
     position: absolute;
@@ -28,7 +28,7 @@ div{
     left: 15px;
 }
 
-main .top .search input{
+main .top .search input {
     width: 100%;
     padding: 12px 12px 12px 50px;
     border-radius: 4px;
@@ -37,21 +37,21 @@ main .top .search input{
     color: white;
 }
 
-main .top .search input:focus-visible{
+main .top .search input:focus-visible {
     border-color: rgb(73, 105, 228);
     outline: none;
 }
 
-main .content{
-    background-color: rgb(22, 22, 22) ;
+main .content {
+    background-color: rgb(22, 22, 22);
 }
 
-main .content .nav-bar{
+main .content .nav-bar {
     padding: 32px 24px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-main .content .nav-bar button{
+main .content .nav-bar button {
     background-color: #4e4e4e;
     border: none;
     border-radius: 4px;
@@ -63,11 +63,11 @@ main .content .nav-bar button{
     font-size: 15px;
 }
 
-main .content .nav-bar button:hover{
+main .content .nav-bar button:hover {
     background-color: rgb(57, 82, 177);
 }
 
-main .content .nav-bar button:active{
+main .content .nav-bar button:active {
     background-color: rgb(41, 58, 127);
 }
 
@@ -81,4 +81,46 @@ main .content .cards-area {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+}
+
+.active {
+    pointer-events: none;
+    background-color: rgb(73, 105, 228) !important;
+}
+
+main .bottom {
+    background-image: url(../../../assets/img/home-page/img2.png);
+    background-position: right;
+    padding: 80px 190px;
+    text-align: end;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+main .bottom h4 {
+    font-size: 30px;
+    margin: 0px 0px 20px;
+}
+
+main .bottom p {
+    font-size: 20px;
+    margin: 0px 0px 25px;
+}
+
+main .bottom button {
+    padding: 8px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 4px;
+    background-color: transparent;
+    line-height: 1.7;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+main .bottom button:hover{
+    border-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+a{
+    color: rgb(255, 255, 255);
 }

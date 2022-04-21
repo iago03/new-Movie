@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -15,22 +15,24 @@ import { HttpService } from 'src/app/shared/services/http.service';
 export class HomePageComponent implements OnInit {
 
   data$:Observable<MoviListInfo[]>;
+  @ViewChildren('button') buttons:QueryList<ElementRef>;
 
-  constructor(private auth:AngularFireAuth, private router:Router, private http:HttpService) { }
+  constructor(private http:HttpService) { }
 
   ngOnInit(): void {
     this.getAllMovieList()
   }
 
-
-  logOut(){
-    // this.auth.signOut().then(v => {
-    //   this.router.navigate([''])
-    // });
+  getAllMovieList(){
+    this.data$ = this.http.getAllMoviesList(1,"now_playing")
   }
 
-  getAllMovieList(){
-    this.data$ = this.http.getAllMoviesList(1)
+  rout(event:Event, name:string){
+    
+    this.buttons.forEach(o => o.nativeElement.classList.remove('active'));
+    (event.target as HTMLButtonElement).classList.toggle("active");
+    this.data$ = this.http.getAllMoviesList(1,name);
+    
   }
 
 }

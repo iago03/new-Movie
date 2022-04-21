@@ -8,6 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ButtonComponent {
   @Input() value:string;
   @Input() fontSize:string = "16px";
+  @Input() margin:string = "30px 0px";
+  @Input() padding:string = "16px";
 
   constructor() { }
 

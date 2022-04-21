@@ -1,0 +1,35 @@
+main{
+    background-color: rgb(22, 22, 22);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+main section{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0px auto;
+    padding: 20px;
+}
+
+main section aside{
+    width: 30%;
+}
+
+main section p{
+    cursor: pointer;
+    font-size: 15px;
+}
+
+main .center .icon{
+    display: flex;
+}
+
+main .center .icon div{
+    width: 25px;
+    height: 25px;
+    margin-right: 15px;
+} 
+
+main .icon div svg{
+    fill: rgba(255, 255, 255, 0.9);
+}
