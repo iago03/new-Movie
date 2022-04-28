@@ -1,0 +1,37 @@
+<app-header></app-header>
+
+<main>
+    <hr>
+    <section  *ngIf="movieInfo$ | async as ItemInfo">
+        <aside class="left">
+            <h3 style="margin: 0px 0px 10px; font-size: 24px;">{{ItemInfo.original_title}}</h3>
+            <h4 style="margin: 0px; font-size: 20px;">{{ItemInfo.release_date | date}}</h4>
+            <div class="content">
+                <span style="color: rgba(255, 255, 255, 0.6); font-size:12px">Synopsis</span>
+
+                <p>{{ItemInfo.overview}}</p>
+
+                <span class="similar"
+                *ngFor="let item of ItemInfo.genres"
+                >{{item.name}}</span>
+            </div>
+
+        </aside>
+        <aside class="right">
+            <div class="img">
+                <img [src]="ItemInfo.poster_path" alt="">
+            </div>
+        </aside>
+    </section>
+    <section class="video"
+    *ngIf="videoUrl; else elseBlock"
+    >
+        <iframe class="responsive-iframe" [src]="videoUrl" frameborder="0" allowfullscreen></iframe>
+    </section>
+    <ng-template #elseBlock>
+        <p class="error">Movie trailer not found</p>
+    </ng-template>
+
+</main>
+
+<app-footer></app-footer>

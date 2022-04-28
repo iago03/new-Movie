@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
-import { MoviListInfo } from '../inteface/shared-interface';
+import { MoviItemInfo, MoviListInfo } from '../inteface/shared-interface';
 
 @Injectable({
   providedIn: 'root'
@@ -28,5 +28,31 @@ export class HttpService {
         return newData
       }));
   }
+
+
+  
+  getPopularMoviesItemInfo(id:string){
+    return this.http.get<Observable<MoviItemInfo>>(`https://api.themoviedb.org/3/movie/${id}?api_key=${this.api_key}&language=en-US`)
+      .pipe(map((response:any):MoviItemInfo => {
+
+        response.backdrop_path = this.imgPath + response.backdrop_path;
+        response.poster_path = this.imgPath + response.poster_path;
+
+        let newData = response;
+        return newData
+      }));
+      
+  }
+
+
+  getMovieVideoLink(id:string){
+    return this.http.get(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=730c458a75766d797ebf72e6c2791bf9&language=en-US`)
+      .pipe(map((response:any):string => {
+        let video = response.results.filter((v:any) => v.name === "Official Trailer");
+        let videoUrl = `http://www.youtube.com/embed/${video[0].key}?modestbranding=1`
+        return videoUrl
+      }))
+  }
+
 
 }

@@ -8,3 +8,11 @@ export interface MoviListInfo{
     original_language:string;
     vote_average:number;
 }
+
+export interface MoviItemInfo extends MoviListInfo{
+    budget:number;
+    genres:any[];
+    production_companies:any[];
+    runtime:number;
+    status:string;
+}

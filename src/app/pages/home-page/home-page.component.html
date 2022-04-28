@@ -24,6 +24,7 @@
         <article class="cards-area">
             <app-card
             *ngFor="let item of data$ | async" [cardItem]="item"
+            (click) = "navigate(item.id)"
             ></app-card>
         </article>
     </section>

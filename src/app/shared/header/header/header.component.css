@@ -17,6 +17,7 @@ header nav{
 header nav h1{
     width: 110px;
     margin: 0px;
+    cursor: pointer;
 }
 
 header nav h1 svg{

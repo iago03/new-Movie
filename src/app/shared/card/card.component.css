@@ -14,12 +14,6 @@
     height: 340px;
 }
 
-.card .img img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 .card p{
     margin: 4px;
     font-size: 13px;

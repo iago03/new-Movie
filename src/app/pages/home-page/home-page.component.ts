@@ -17,7 +17,7 @@ export class HomePageComponent implements OnInit {
   data$:Observable<MoviListInfo[]>;
   @ViewChildren('button') buttons:QueryList<ElementRef>;
 
-  constructor(private http:HttpService) { }
+  constructor(private http:HttpService, private router:Router) { }
 
   ngOnInit(): void {
     this.getAllMovieList()
@@ -33,6 +33,10 @@ export class HomePageComponent implements OnInit {
     (event.target as HTMLButtonElement).classList.toggle("active");
     this.data$ = this.http.getAllMoviesList(1,name);
     
+  }
+
+  navigate(id:number){
+    this.router.navigate(['movi-info',id]);
   }
 
 }

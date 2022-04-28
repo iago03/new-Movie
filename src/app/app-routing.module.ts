@@ -8,9 +8,13 @@ const routes: Routes = [
 
   {path: '', loadChildren: () => import("./auth/sign-in/signIn.module").then(m => m.SignInModule)},
   {path: 'sing-up', loadChildren: () => import("./auth/sign-up/sign-up.module").then(m => m.SignUpMpdule)},
-  {path: 'home', loadChildren: () => import('./pages/home-page.module').then(m => m.HomePageModule), 
+  {path: 'home', loadChildren: () => import('./pages/home-page/page.module').then(m => m.HomePageModule), 
   canActivate: [AngularFireAuthGuard], 
-  data: { authGuardPipe: redirectUnauthorizedToLogin }}
+  data: { authGuardPipe: redirectUnauthorizedToLogin }},
+  {path: 'movi-info/:id', loadChildren: () => import ("./pages/movie-info/movi-info.module").then(m => m.MovieInfoModue),
+  canActivate: [AngularFireAuthGuard], 
+  data: { authGuardPipe: redirectUnauthorizedToLogin }
+  }
 ];
 
 @NgModule({

@@ -1,13 +1,13 @@
 import { NgModule } from "@angular/core";
 import { ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
-import { InputModul } from "../../shared/input.module";
+import { SharedModul } from "../../shared/shared.module";
 import { SignInComponent } from "./sign-in.component";
 
 @NgModule({
     declarations: [ SignInComponent ],
     imports: [
-        InputModul,
+        SharedModul,
         ReactiveFormsModule,
         RouterModule.forChild([{
             path: '', component:SignInComponent,
