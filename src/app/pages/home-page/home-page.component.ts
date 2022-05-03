@@ -62,6 +62,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
     if(this.search != ""){
       this.debounce = setTimeout(() => {
         this.serchData$ = this.http.getSearchData(this.search);
+        console.log(this.serchData$)
         this.loading = false;
       },500)
     }else{

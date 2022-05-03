@@ -10,6 +10,9 @@
       </svg>
     </div>
     <form [formGroup]="form" class="sing-in">
+      <span 
+      *ngIf="requestError"
+      style="font-size: 14px;">Username or Password is Incorrect</span>
       <h2>Sign In</h2>
       <app-input
       [ngClass]="{'invalid': form.get('email')?.status == 'INVALID' && form.get('email')?.touched}"

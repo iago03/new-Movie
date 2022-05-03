@@ -15,6 +15,10 @@
   <hr style="margin-top: 30px; opacity: 0.6;">
   <section class="content">
     <form [formGroup]="form" class="sing-up">
+      <span 
+      *ngIf="requestError"
+      style="font-size: 14px;">The email address is already in use by another account</span>
+
       <h2>Joining Netflix is easy.</h2>
       <p>Enter your password and you'll be watching in no time.</p>
       <app-input [ngClass]="{'invalid': form.get('email')?.status == 'INVALID' && form.get('email')?.touched}"

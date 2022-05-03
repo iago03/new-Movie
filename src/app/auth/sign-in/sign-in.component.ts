@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class SignInComponent implements OnInit {
 
   form: FormGroup;
+  requestError:boolean;
 
   constructor(private fb: FormBuilder, private auth: AngularFireAuth, private router: Router) { }
 
@@ -27,8 +28,15 @@ export class SignInComponent implements OnInit {
     if (this.form.valid) {
 
       const {email, password} = this.form.value;
-      this.auth.signInWithEmailAndPassword(email, password).then(() => {
+      this.auth.signInWithEmailAndPassword(email, password)
+      .then(() => {
         this.router.navigate(['home']);
+        this.requestError = false;
+      })
+      .catch(() => {
+        this.requestError = true;
+        this.form.reset()
+        this.form.markAllAsTouched()
       });
 
     } else {

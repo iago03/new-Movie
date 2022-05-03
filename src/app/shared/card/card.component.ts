@@ -6,13 +6,9 @@ import { MoviListInfo } from '../inteface/shared-interface';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css']
 })
-export class CardComponent implements OnInit {
+export class CardComponent{
 
   @Input() cardItem:MoviListInfo
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

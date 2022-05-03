@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class SignUpComponent implements OnInit {
 
   form: FormGroup;
+  requestError:boolean;
 
   constructor(private fb: FormBuilder, private auth: AngularFireAuth, private router: Router) { }
 
@@ -25,12 +26,19 @@ export class SignUpComponent implements OnInit {
 
   signUp() {
     if (this.form.valid) {
-      // const {email, password} = this.form.value;
-      // this.auth.createUserWithEmailAndPassword(email, password).then(user => {
-      //   this.router.navigate(['/home']);
-      //   console.log(user);
-      // })
-    }else{
+      const { email, password } = this.form.value;
+      this.auth.createUserWithEmailAndPassword(email, password)
+        .then(() => {
+          this.router.navigate(['/home']);
+          this.requestError = false;
+        })
+        .catch(() => {
+          this.requestError = true;
+          this.form.reset()
+          this.form.get('email')?.markAsTouched();
+        });
+
+    } else {
       this.form.markAllAsTouched()
     }
   }
