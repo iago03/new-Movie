@@ -18,6 +18,7 @@ export class InputComponent implements OnInit, ControlValueAccessor {
   @Input() inputId:string;
   @Input() inputClass:string;
   onChange: (value:any) => void;
+  onTouched: () => void;
   
   constructor() { }
 
@@ -30,7 +31,7 @@ export class InputComponent implements OnInit, ControlValueAccessor {
     
   }
   registerOnTouched(fn: any): void {
-    
+    this.onTouched = fn;
   }
 
   ngOnInit(): void {
@@ -39,5 +40,9 @@ export class InputComponent implements OnInit, ControlValueAccessor {
 
   onKey(){
     this.onChange(this.value)
+  }
+
+  focus(){
+    this.onTouched();
   }
 }

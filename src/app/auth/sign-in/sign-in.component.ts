@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,23 +10,32 @@ import { Router } from '@angular/router';
 })
 export class SignInComponent implements OnInit {
 
-  form:FormGroup;
+  form: FormGroup;
 
-  constructor(private fb:FormBuilder, private auth:AngularFireAuth, private router:Router){}
+  constructor(private fb: FormBuilder, private auth: AngularFireAuth, private router: Router) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
-      email: new FormControl(),
-      password: new FormControl(),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [Validators.required, Validators.minLength(5)]),
     })
   }
 
-  
-  test(){
-    const {email, password} = this.form.value;
-    this.auth.signInWithEmailAndPassword(email, password).then(() => {
-      this.router.navigate(['home']);
-    });
+
+  signIn() {
+
+    if (this.form.valid) {
+
+      const {email, password} = this.form.value;
+      this.auth.signInWithEmailAndPassword(email, password).then(() => {
+        this.router.navigate(['home']);
+      });
+
+    } else {
+      this.form.markAllAsTouched()
+    }
+
+
   }
 
 }

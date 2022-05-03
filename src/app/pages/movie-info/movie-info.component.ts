@@ -31,7 +31,7 @@ export class MovieInfoComponent implements OnInit {
   }
 
   getMovieInfo(){
-    this.movieInfo$ = this.http.getPopularMoviesItemInfo(this.Id)
+    this.movieInfo$ = this.http.getMoviesItemInfo(this.Id)
   }
 
   getVideo(){

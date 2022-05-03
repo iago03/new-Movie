@@ -1,5 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
+import { FormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 import { SharedModul } from "../../shared/shared.module";
 import { HomePageComponent } from "./home-page.component";
@@ -10,6 +11,7 @@ import { HomePageComponent } from "./home-page.component";
     imports:[
         CommonModule,
         SharedModul,
+        FormsModule,
         RouterModule.forChild([{
             path: "", component:HomePageComponent
         }])

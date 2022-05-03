@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/compat/auth'
 import { Router } from '@angular/router';
 
@@ -10,30 +10,29 @@ import { Router } from '@angular/router';
 })
 
 export class SignUpComponent implements OnInit {
-  
-  form:FormGroup;
 
-  constructor(private fb:FormBuilder, private auth: AngularFireAuth, private router: Router){ }
+  form: FormGroup;
+
+  constructor(private fb: FormBuilder, private auth: AngularFireAuth, private router: Router) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
-      email: new FormControl(),
-      password: new FormControl(),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [Validators.required, Validators.minLength(5)]),
     })
   }
 
-  
-  test(){
-    const {email, password} = this.form.value;
-    this.auth.createUserWithEmailAndPassword(email, password).then(user => {
-      this.router.navigate(['/home']);
-      console.log(user);
-    })
-    console.log(this.form.value)
-  }
 
-  test2(){
-    console.log("iago")
+  signUp() {
+    if (this.form.valid) {
+      // const {email, password} = this.form.value;
+      // this.auth.createUserWithEmailAndPassword(email, password).then(user => {
+      //   this.router.navigate(['/home']);
+      //   console.log(user);
+      // })
+    }else{
+      this.form.markAllAsTouched()
+    }
   }
 
 }

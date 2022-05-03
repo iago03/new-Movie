@@ -52,3 +52,14 @@ main .content .sing-up p{
 main .content .sing-up input{
     margin-bottom: 16px!important;
 }
+
+.invalid >>> input{ 
+    border: 1px solid red;
+}
+
+form span{
+    transform: translateY(-10px);
+    position: absolute;
+    color: red;
+    font-size: 12px;
+}

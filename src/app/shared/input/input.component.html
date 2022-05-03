@@ -1,4 +1,7 @@
 <div class="form-iput">
-    <input [ngClass]="{'sing-up': inputClass}" [type]='inputType' [(ngModel)]="value" (keyup)="onKey()" [id]="inputId">
+    <input 
+
+    [ngClass]="{'sing-up': inputClass}" [type]='inputType' [(ngModel)]="value" (focus)="focus()" (keyup)="onKey()"  [id]="inputId">
     <label [ngClass]="{'focus': value}" [for]="inputId">{{label}}</label>
+
 </div>

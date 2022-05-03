@@ -1,3 +1,7 @@
+main{
+    background-color: #161616;
+}
+
 main .top {
     background-size: 100%;
     background-image: url(../../../assets/img/home-page/streams-bg.png);
@@ -20,7 +24,7 @@ main .top h2 {
     text-align: center;
 }
 
-div {
+.svg {
     width: 20px;
     height: 20px;
     position: absolute;
@@ -42,7 +46,7 @@ main .top .search input:focus-visible {
     outline: none;
 }
 
-main .content {
+main .content,main .search-area {
     background-color: rgb(22, 22, 22);
 }
 
@@ -72,7 +76,7 @@ main .content .nav-bar button:active {
 }
 
 
-main .content .cards-area {
+.cards-area {
     width: 95%;
     max-width: 1800px;
     margin: 0px auto;
@@ -123,4 +127,9 @@ main .bottom button:hover{
 
 a{
     color: rgb(255, 255, 255);
+}
+
+.button{
+    width: 200px;
+    margin: 0px auto 30px;
 }

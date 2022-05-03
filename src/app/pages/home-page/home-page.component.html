@@ -4,17 +4,21 @@
     <section class="top">
         <form class="search">
             <h2>Unlimited movies, TV shows, and more.</h2>
-            <div><svg viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.7)" class="Hawkins-Icon"
+            <div class="svg"><svg viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.7)" class="Hawkins-Icon"
                     style="fill:rgba(255, 255, 255, 0.7)">
                     <path fill="none" d="M0 0h24v24H0z"></path>
                     <path fill-rule="evenodd"
                         d="M11 18a7 7 0 10-7-7 7 7 0 007 7zm7-1.38l3.68 3.67-1.42 1.42L16.62 18A9 9 0 1118 16.62z">
                     </path>
                 </svg></div>
-            <input type="text" placeholder="Search for Netflix Films">
+            <input [(ngModel)]="search" 
+            (keyup)="onKey()"
+            name="search" type="text" placeholder="Search for Netflix Films">
         </form>
     </section>
-    <section class="content">
+    <section *ngIf="!search; else searchBlock"
+    
+    class="content">
         <article class="nav-bar">
             <button #button (click)="rout($event, 'now_playing')" class="active">Movies</button>
             <button #button  (click)="rout($event,'top_rated')">Top Rated</button>
@@ -27,12 +31,42 @@
             (click) = "navigate(item.id)"
             ></app-card>
         </article>
+
+        <div class="button">
+            <app-button (click)="showMore()" value="Show more" margin="0px"></app-button>
+        </div>
     </section>
+
+    <ng-template #searchBlock>
+        <section class="search-area" style="min-height: 800px;">
+            <article 
+            *ngIf="!loading else elseBlock"
+            class="cards-area">
+                <app-card
+                *ngFor="let item of serchData$ | async" [cardItem]="item"
+                (click) = "navigate(item.id)"
+                ></app-card>
+            </article>
+
+            
+            <ng-template #elseBlock>
+                <article style="padding: 300px 0px;">
+                    <div style="height: 200px; width: 200px; margin: 0px auto;">
+                        <img src="../../../assets/img/home-page/Eclipse-1.1s-251px (1).svg" alt="">
+                    </div>
+                </article>
+            </ng-template>
+            
+        </section>
+    </ng-template>
+
     <section class="bottom">
         <h4>Looking for company assets?</h4>
         <p>Get more images and information about Netflix on our company site.</p>
         <button><a href="https://about.netflix.com/en/company-assets">Go to About Netflix</a></button>
     </section>
+
+
 </main>
 
 <app-footer></app-footer>
