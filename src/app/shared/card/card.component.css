@@ -1,3 +1,7 @@
+article{
+    position: relative;
+}
+
 .card{
     box-shadow: 0 2px 4px 0 rgb(0 0 0 / 10%), 0 0 2px 0 rgb(0 0 0 / 10%);
     width: 255px;
@@ -19,4 +23,21 @@
     font-size: 13px;
     color: white;
     line-height: 2;
+}
+
+.favorit{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: red;
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    font-size: 20px;
+    cursor: pointer;
 }

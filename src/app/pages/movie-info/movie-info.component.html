@@ -16,6 +16,10 @@
                 >{{item.name}}</span>
             </div>
 
+            <button
+            *ngIf="!alreadyAdd"
+            (click)="addInFireStore(ItemInfo.poster_path, ItemInfo.release_date)">add feivorite</button>
+
         </aside>
         <aside class="right">
             <div class="img">

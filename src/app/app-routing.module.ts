@@ -11,6 +11,9 @@ const routes: Routes = [
   {path: 'home', loadChildren: () => import('./pages/home-page/page.module').then(m => m.HomePageModule), 
   canActivate: [AngularFireAuthGuard], 
   data: { authGuardPipe: redirectUnauthorizedToLogin }},
+  {path: 'favorite', loadChildren: () => import('./pages/favorite/favorit.module').then(m => m.FavoritModule), 
+  canActivate: [AngularFireAuthGuard], 
+  data: { authGuardPipe: redirectUnauthorizedToLogin }},
   {path: 'movi-info/:id', loadChildren: () => import ("./pages/movie-info/movi-info.module").then(m => m.MovieInfoModue),
   canActivate: [AngularFireAuthGuard], 
   data: { authGuardPipe: redirectUnauthorizedToLogin }

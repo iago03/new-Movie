@@ -1,9 +1,9 @@
-import { Component, ElementRef, OnDestroy, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Component, ElementRef, OnDestroy, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject, delay, map, Observable, of, Subscription, zip } from 'rxjs';
+import { BehaviorSubject, map, Observable, of, Subscription, zip } from 'rxjs';
 import { MoviListInfo } from 'src/app/shared/inteface/shared-interface';
 import { HttpService } from 'src/app/shared/services/http.service';
+
 
 @Component({
   selector: 'app-home-page',
@@ -62,7 +62,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
     if(this.search != ""){
       this.debounce = setTimeout(() => {
         this.serchData$ = this.http.getSearchData(this.search);
-        console.log(this.serchData$)
+        
         this.loading = false;
       },500)
     }else{

@@ -1,4 +1,10 @@
-<div class="card">
-    <div class="img"><img [src]="cardItem.poster_path" alt=""></div>
-    <p>{{cardItem.release_date}}</p>
-</div>
+<article>
+    <div 
+    (click)="delete()"
+    class="favorit" *ngIf="favorit">x</div>
+
+    <div class="card">
+        <div class="img"><img [src]="cardItem.poster_path" alt=""></div>
+        <p>{{cardItem.release_date}}</p>
+    </div>
+</article>

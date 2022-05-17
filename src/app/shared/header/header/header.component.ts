@@ -15,6 +15,7 @@ export class HeaderComponent{
     this.auth.signOut().then(v => {
       this.router.navigate([''])
     });
+    localStorage.clear();
   }
 
   sessionClear(){
