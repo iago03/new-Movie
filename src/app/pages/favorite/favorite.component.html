@@ -10,6 +10,7 @@
             *ngFor="let item of data$ | async" [cardItem]="item"
             [favorit]="true"
             [uId]="uId"
+            (click)="navigate(item.id)"
             ></app-card>
         </article>
 

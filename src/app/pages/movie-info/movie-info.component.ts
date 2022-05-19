@@ -50,7 +50,7 @@ export class MovieInfoComponent implements OnInit {
     
     next: (v) => {
       this.videoUrl = this.sanitaizer.bypassSecurityTrustResourceUrl(v);
-      console.log(this.videoUrl)
+      
     },
     error: (err) => {
       console.log(err)
